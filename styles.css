@@ -8,7 +8,57 @@ body {
     line-height: 1.6;
 }
 
+#about aside h3 {
+    font-size: 1.5rem;
+    margin-top: 1.5rem;
+    color: #333;
+}
 
+/* Fun Facts List */
+#about aside ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+}
+
+#about aside ul li {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* University Section */
+#about aside p {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 1rem;
+}
+
+#about aside a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#about aside a:hover {
+    text-decoration: underline;
+}
+
+/* Resume Button */
+#about aside .btn-main {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 0.25rem;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+#about aside .btn-main:hover {
+    background-color: #0056b3;
+}
 
 /* Existing card styles */
 .card {
@@ -30,7 +80,7 @@ body {
 
 /* Framework Card Styles for Flipping Effect */
 .framework-card {
-    color: #cc5200;
+    color: #000;
     position: relative;
     width: 100%;
     height: 300px; /* Adjust height as needed */
@@ -48,7 +98,7 @@ body {
 
 .card-inner .card-front,
 .card-inner .card-back {
-    color: #cc5200;
+    color: #000;
     font-size: 20px;
     position: absolute;
     width: 100%;
@@ -73,7 +123,7 @@ body {
     padding: 10px;
     height: 260px;
     border-radius: 20px;
-    border: 1px inset #000;
+    /* border: 1px inset #000; */
 }
 
 .card-title{
@@ -88,7 +138,7 @@ body {
     border-radius: 15px;
     width: 180px;
     color: black;
-    /* border: 2px solid black;  */
+    border: 2px solid #cc5200; 
     overflow: hidden;
     
 }
@@ -430,7 +480,7 @@ footer {
 
 /* Projects Section */
 #projects {
-    height: 70vh;
+    height: 68vh;
     overflow-y: auto; /* Enables vertical scrolling */
     padding: 20px;
 }
