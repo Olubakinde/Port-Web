@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="content">
+            <div class="back-button">
+                <a href="../index.html" class="btn-back">← Back to Portfolio</a>
+            </div>
+            <h1>To-Do List</h1>
+            <p>Welcome to my To-Do List application. Below, you'll find details about the application, its core functionalities, and the design approach.</p>
+            
+            <!-- Embed the To-Do List -->
+            <iframe src="https://olubakinde.github.io/to-do-list/" frameborder="0" class="game-embed"></iframe>
+            
+            <section class="details">
+                <h2>How It Was Built</h2>
+                <p>This To-Do List is a simple yet powerful web application designed to help users organize tasks and manage their daily activities effectively. Built using HTML, CSS, and JavaScript, the application provides a user-friendly interface where tasks can be added, marked as completed, edited, and removed. It leverages localStorage to store the to-do list locally, ensuring that tasks persist even after refreshing the page.</p>
+
+                <h2>Core Functionalities</h2>
+                <ul>
+                    <li><strong>Add Tasks:</strong> Users can add new tasks to their to-do list.</li>
+                    <li><strong>Mark Tasks as Completed:</strong> Tasks can be marked as completed, which visually distinguishes them from incomplete tasks.</li>
+                    <li><strong>Edit Tasks:</strong> Users can edit existing tasks to update their details.</li>
+                    <li><strong>Remove Tasks:</strong> Users can remove tasks from the list when they are no longer needed.</li>
+                    <li><strong>LocalStorage Integration:</strong> Utilizes localStorage to store tasks, ensuring persistence across page reloads.</li>
+                </ul>
+
+                <h2>Design Approach</h2>
+                <p>The To-Do List application is designed with a focus on simplicity and usability. The interface is intuitive, allowing users to easily manage their tasks. The application employs localStorage for data persistence, making sure that tasks are saved between sessions without requiring server-side storage.</p>
+
+                <h2>Challenges Faced</h2>
+                <ul>
+                    <li>Ensuring that task management operations (add, edit, remove) are performed smoothly and reliably.</li>
+                    <li>Designing a user-friendly interface that effectively displays tasks and their statuses.</li>
+                    <li>Implementing localStorage to handle data persistence while ensuring that the data is correctly managed and retrieved.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+</head>
+<body>
+    <header class="bg-dark text-white text-center py-3">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="index.html">Oluwatito</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#frameworks">Frameworks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="header-content">
+            <img src="img/img.jpg" alt="Profile Picture" class="profile-img">
+            <h1 class="my-3">Hello, I'm Oluwatito</h1>
+            <p>Creative Developer | Passionate Learner</p>
+            <a href="#projects" class="btn btn-main">Discover My Work</a>
+        </div>
+    </header>
+    
+    <main class="container my-5">
+        <section id="about" class="section bg-light p-5 rounded shadow-sm">
+            <h2>About Me</h2>
+            <div class="row">
+                <div class="col-md-8">
+                    <p>I'm a passionate developer with a keen interest in modern technologies. Here’s a bit about me and my journey.</p>
+                </div>
+                <aside class="col-md-4">
+                    <h3>Fun Facts</h3>
+                    <ul>
+                        <li>Love coding in Python and JavaScript</li>
+                        <li>Enjoy hiking and outdoor activities</li>
+                        <li>Fan of sci-fi and tech blogs</li>
+                    </ul>
+                </aside>
+            </div>
+        </section>
+
+        <section id="projects" class="section bg-white p-5 rounded shadow-sm">
+            <h2>Projects</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card" data-aos="fade-up">
+                        <div class="card-body">
+                            <h3>AI-powered Tic-Tac-Toe</h3>
+                            <p>Built with HTML, CSS, and JavaScript</p>
+                            <a href="tictactoe/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card" data-aos="fade-up">
+                        <div class="card-body">
+                            <h3>BankAccount-MS</h3>
+                            <p>A TypeScript-based Bank Account Management System</p>
+                            <a href="Bank-accountMS/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Added Projects -->
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card" data-aos="fade-up">
+                        <div class="card-body">
+                            <h3>Binary-Clock</h3>
+                            <p>The binary clock shows time in binary format with LEDs</p>
+                            <a href="Binary-clock/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card" data-aos="fade-up">
+                        <div class="card-body">
+                            <h3>Weather App</h3>
+                            <p>An app to check the weather forecast using JavaScript and APIs</p>
+                            <a href="weatherapp/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card" data-aos="fade-up">
+                        <div class="card-body">
+                            <h3>Task Manager</h3>
+                            <p>Manage your tasks with a to-do list app built with JavaScript</p>
+                            <a href="Task-Manager/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card" data-aos="fade-up">
+                        <div class="card-body">
+                            <h3>Clock</h3>
+                            <p>Web-based clock featuring real-time updates</p>
+                            <a href="Clock/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navigation-buttons">
+                <button class="btn btn-dark" id="prevBtn">Previous</button>
+                <button class="btn btn-dark" id="nextBtn">Next</button>
+            </div>
+        </section>
+
+        <section id="frameworks" class="section bg-light p-5 rounded shadow-sm">
+            <h2>Frameworks I Use</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/html.png" class="card-img-top" alt="HTML">
+                                <div class="card-body">
+                                    <h5 class="card-title">HTML</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">HTML</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/css.png" class="card-img-top" alt="CSS">
+                                <div class="card-body">
+                                    <h5 class="card-title">CSS</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">CSS</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/jss.png" class="card-img-top" alt="JavaScript">
+                                <div class="card-body">
+                                    <h5 class="card-title">JavaScript</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">JavaScript</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/ts.png" class="card-img-top" alt="Typescript">
+                                <div class="card-body">
+                                    <h5 class="card-title">Typescript</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">Typescript</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/C.jpeg" class="card-img-top" alt="C">
+                                <div class="card-body">
+                                    <h5 class="card-title">C</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">C</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/py.jpeg" class="card-img-top" alt="Python">
+                                <div class="card-body">
+                                    <h5 class="card-title">Python</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">Python</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card framework-card" data-aos="flip-left">
+                        <div class="card-inner">
+                            <div class="card-front">
+                                <img src="img/chat.png" class="card-img-top" alt="OpenAI">
+                                <div class="card-body">
+                                    <h5 class="card-title">OpenAI</h5>
+                                </div>
+                            </div>
+                            <div class="card-back">
+                                <h5 class="card-title">Open-AI</h5>
+                                <p class="card-text"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section bg-white p-5 rounded shadow-sm">
+            <h2>Contact Me</h2>
+            <form id="contact-form">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-main">Send Message</button>
+            </form>
+            <p id="response-message" class="mt-3"></p>
+        </section>
+        
+    </main>
+
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="footer-icons">
+            <a href="https://www.linkedin.com/in/oluwatito-promise-olubakinde-43ab702a9/" class="fab fa-linkedin-in"></a>
+            <a href="https://github.com/Olubakinde" class="fab fa-github"></a>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+</html>

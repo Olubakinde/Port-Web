@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Clock</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="content">
+            <div class="back-button">
+                <a href="../index.html" class="btn-back">← Back to Portfolio</a>
+            </div>
+            <h1>Binary Clock</h1>
+            <p>Welcome to my Binary Clock project. Below, you'll find details about the clock, its core functionalities, and the design approach.</p>
+            
+            <!-- Embed the Binary Clock -->
+            <iframe src="https://olubakinde.github.io/Binary-Clock/" frameborder="0" class="game-embed"></iframe>
+            
+            <section class="details">
+                <h2>How It Was Built</h2>
+                <p>The Binary Clock is built using the C programming language and a Raspberry Pi equipped with an LED Sense HAT. The clock represents time in binary format, utilizing the LED matrix to display hours, minutes, and seconds in binary. The LED Sense HAT provides a versatile way to visually represent time through a grid of LEDs that light up based on the current time's binary representation.</p>
+
+                <h2>Core Functionalities</h2>
+                <ul>
+                    <li><strong>Binary Representation:</strong> Displays time in binary format with LEDs corresponding to each bit.</li>
+                    <li><strong>Three Columns:</strong> Shows hours, minutes, and seconds, each split into two 4-bit groups.</li>
+                    <li><strong>Real-Time Updates:</strong> Continuously updates the LED display to reflect the current time.</li>
+                </ul>
+
+                <h2>Design Approach</h2>
+                <p>The Binary Clock leverages the capabilities of the Raspberry Pi and the LED Sense HAT to provide a real-time, binary-based time display. The C programming language is used to handle the logic for converting and displaying time in binary format. The design focuses on using the LED matrix effectively to ensure clear and accurate representation of time.</p>
+
+                <h2>Challenges Faced</h2>
+                <ul>
+                    <li>Implementing real-time updates for the binary representation of time on the LED matrix.</li>
+                    <li>Designing a method to convert and display time accurately in binary format using the LED Sense HAT.</li>
+                    <li>Managing the hardware and software integration between the Raspberry Pi and the LED Sense HAT to ensure smooth functionality.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
