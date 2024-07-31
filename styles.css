@@ -8,8 +8,27 @@ body {
     line-height: 1.6;
 }
 
+/* Existing card styles */
+.card {
+    background-color: #000; /* Black background */
+    color: black; /* Ensure text is readable */
+    padding: 20px; /* Adjust padding as needed */
+    border-radius: 10px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Optional: Adds shadow for depth */
+    text-align: center; /* Optional: Center text */
+}
+
+/* Adjusting the <p> tag within the card */
+.card p {
+    margin: 0; /* Remove default margin */
+    padding: 10px 0; /* Add padding for spacing */
+    font-size: 16px; /* Adjust font size as needed */
+}
+
+
 /* Framework Card Styles for Flipping Effect */
 .framework-card {
+    color: #000;
     position: relative;
     width: 100%;
     height: 300px; /* Adjust height as needed */
@@ -48,7 +67,28 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 40px;
+    color: black;
+    padding: 10px;
+    height: 260px;
+    border-radius: 20px;
+    border: 2px solid #cc5200;
+}
+
+.card-title{
+    font-weight: 400;
+    font-size: 30px;
+}
+
+.card-inner .card-back .card-text {
+    height: 100%;
+    padding: 20px;
+    line-height: 1; 
+    border-radius: 15px;
+    width: 180px;
+    color: black;
+    /* border: 2px solid black;  */
+    overflow: hidden;
+    
 }
 
 .framework-card:hover .card-inner {
