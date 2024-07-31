@@ -123,7 +123,7 @@ body {
     padding: 10px;
     height: 260px;
     border-radius: 20px;
-    /* border: 1px inset #000; */
+    border: 2px solid #cc5200; 
 }
 
 .card-title{
@@ -138,7 +138,6 @@ body {
     border-radius: 15px;
     width: 180px;
     color: black;
-    border: 2px solid #cc5200; 
     overflow: hidden;
     
 }
