@@ -8,6 +8,49 @@ body {
     line-height: 1.6;
 }
 
+/* Media Container */
+.media-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+/* Media Item */
+.media-item {
+    flex: 1;
+    margin: 0 10px;
+    min-width: 300px; /* Ensure a minimum width for each media item */
+}
+
+/* Media Image */
+.media-image {
+    width: 100%; /* Make image responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+/* Media Video */
+.media-video {
+    width: 100%; /* Make video responsive */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 8px;
+}
+
+/* Responsive Design for Media */
+@media (max-width: 768px) {
+    .media-item {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .media-item {
+        min-width: 100%; /* Allow media items to take full width on very small screens */
+    }
+}
+
+
 /* Container */
 .container {
     max-width: 900px;
