@@ -79,9 +79,9 @@
                 <div class="col-md-4 mb-4">
                     <div class="card project-card">
                         <div class="card-body">
-                            <h3>Mortgage Calculator</h3>
-                            <p>Calculates mortgage payments based on various input parameters</p>
-                            <a href="M-calculator/index.html" class="btn btn-main">View Project</a>
+                            <h3>Apple-FrontPage</h3>
+                            <p>First HTML & CSS experience project.</p>
+                            <a href="https://olubakinde.github.io/Apple/" class="btn btn-main">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -91,6 +91,15 @@
                             <h3>Binary-Clock</h3>
                             <p>The binary clock shows time in binary format with LEDs</p>
                             <a href="Binary-clock/index.html" class="btn btn-main">View Project</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card project-card">
+                        <div class="card-body">
+                            <h3>Mortgage Calculator</h3>
+                            <p>Calculates mortgage payments based on various input parameters</p>
+                            <a href="M-calculator/index.html" class="btn btn-main">View Project</a>
                         </div>
                     </div>
                 </div>
@@ -121,15 +130,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 mb-4">
-                    <div class="card project-card">
-                        <div class="card-body">
-                            <h3>Clock</h3>
-                            <p>Web-based clock featuring real-time updates</p>
-                            <a href="Clock/index.html" class="btn btn-main">View Project</a>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="col-md-4 mb-4">
                     <div class="card project-card" >
                         <div class="card-body">
@@ -283,23 +283,28 @@
 
         <section id="contact" class="section bg-white p-5 rounded shadow-sm">
             <h2>Contact Me</h2>
-            <form id="contact-form">
+            <form action="https://api.web3forms.com/submit" method="POST" id="contact-form">
+                <input type="hidden" name="apikey" value="0f0e0d11-4368-491f-a431-a1fd7338238f">
+            
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Your Email" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
                     </div>
                 </div>
+            
                 <div class="form-group">
                     <label for="message">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Your Message" required></textarea>
+                    <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
                 </div>
+            
                 <button type="submit" class="btn btn-main">Send Message</button>
             </form>
+            
             <p id="response-message" class="mt-3"></p>
         </section>
     </main>
@@ -317,5 +322,7 @@
     <script>
         AOS.init();
     </script>
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
