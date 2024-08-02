@@ -8,6 +8,17 @@ body {
     line-height: 1.6;
 }
 
+/* Adjusted card-back title with underline styling */
+.card-back .card-title {
+    font-weight: 600; /* Slightly bolder font */
+    font-size: 24px; /* Font size for better fit */
+    margin-bottom: 10px;
+    text-decoration: underline; /* Underline the title */
+    text-decoration-color: #ff6600; /* Custom underline color */
+    text-decoration-thickness: 2px; /* Thickness of the underline */
+    text-underline-offset: 4px; /* Space between the text and the underline */
+}
+
 /* Framework Card Styles for Flipping Effect */
 .framework-card {
     color: #000;
@@ -57,12 +68,6 @@ body {
     text-align: center; /* Center align text */
 }
 
-.card-title {
-    font-weight: 600; /* Slightly bolder font */
-    font-size: 24px; /* Smaller font size for better fit */
-    margin-bottom: 10px;
-}
-
 .card-inner .card-back .card-text {
     height: 100%;
     padding: 10px 20px; /* More padding for better spacing */
@@ -86,6 +91,7 @@ body {
         height: 300px; /* Adjust for smaller screens */
     }
 }
+
 
 
 input:focus, textarea:focus {
