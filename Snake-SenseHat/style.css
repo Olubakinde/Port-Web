@@ -119,6 +119,7 @@ h1 {
 @media (max-width: 1024px) {
     video {
         width: 300px;
+        border-radius: 15px;
     }
 
     .game-embed {
