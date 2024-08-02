@@ -117,6 +117,10 @@ h1 {
 
 /* Responsive Design */
 @media (max-width: 1024px) {
+    video {
+        width: 300px;
+    }
+
     .game-embed {
         height: 400px; /* Slightly smaller height for larger tablets */
     }
