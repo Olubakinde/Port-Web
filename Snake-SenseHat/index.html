@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game with Sense HAT</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Code styling */
+        pre {
+            background: #f4f4f4;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            overflow-x: auto;
+        }
+
+        code {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <div class="content">
+            <div class="back-button">
+                <a href="../index.html" class="btn-back">← Back to Portfolio</a>
+            </div>
+            <h1>Snake Game with Sense HAT</h1>
+            <p>Welcome to the Snake Game application. Below, you'll find details about the application, its core functionalities, and the setup process.</p>
+
+            <iframe src="https://olubakinde.github.io/Snake-Game-RBP/" frameborder="0" class="game-embed"></iframe>
+            <h3>Video Demonstration</h3>
+            <div>
+                <video src="img1.mp4" muted autoplay height="400px" style="border-radius: 15px;"></video>
+                <video src="img.mp4" muted autoplay height="400px" style="border-radius: 15px;"></video>
+            </div>
+
+            <section class="details">
+                <h2>How It Was Built</h2>
+                <p>This Snake Game is a Python script designed for the Raspberry Pi 4 with the Sense HAT. Users can control the snake using the joystick or the accelerometer. The game displays the snake and food on the Sense HAT LED matrix, providing a fun and interactive experience.</p>
+
+                <h2>Core Functionalities</h2>
+                <ul>
+                    <li><strong>Game Control:</strong> Control the snake using the joystick or accelerometer on the Sense HAT.</li>
+                    <li><strong>Real-time Display:</strong> Shows the snake and food on the Sense HAT LED matrix for immediate feedback.</li>
+                    <li><strong>Interactive Gameplay:</strong> Play the snake game with dynamic movement and collision detection.</li>
+                </ul>
+
+                <h2>Setup and Installation</h2>
+                <p>To play the Snake Game, follow these steps:</p>
+                <ol>
+                    <li><strong>Install the Sense HAT Library:</strong>
+                        <pre><code>sudo apt-get update
+sudo apt-get install sense-hat
+                        </code></pre>
+                    </li>
+                    <li><strong>Create the Python Script:</strong>
+                        <p>Save the following Python code as `snake.py`:</p>
+                        <pre><code>from sense_hat import SenseHat
+from time import sleep
+import random
+
+sense = SenseHat()
+
+# Colors
+background = (0, 0, 0)  # Black
+snake_color = (0, 255, 0)  # Green
+head_color = (0, 0, 255)  # Blue
+food_color = (255, 0, 0)  # Red
+
+# Game settings
+width = 8
+height = 8
+initial_length = 3
+
+def initialize_game():
+    global snake, direction, food, game_over
+    snake = [(3, 3), (3, 4), (3, 5)]
+    direction = 'left'
+    food = (random.randint(0, width-1), random.randint(0, height-1))
+    game_over = False
+
+initialize_game()
+
+def draw_snake():
+    sense.clear()
+    for i, segment in enumerate(snake):
+        color = head_color if i == 0 else snake_color
+        sense.set_pixel(segment[0], segment[1], color)
+    sense.set_pixel(food[0], food[1], food_color)
+
+def move_snake():
+    global food, game_over
+    head_x, head_y = snake[0]
+    if direction == 'up':
+        head_y = (head_y - 1) % height
+    elif direction == 'down':
+        head_y = (head_y + 1) % height
+    elif direction == 'left':
+        head_x = (head_x - 1) % width
+    elif direction == 'right':
+        head_x = (head_x + 1) % width
+
+    new_head = (head_x, head_y)
+    if new_head in snake:
+        game_over = True  # Game over
+        return False
+
+    snake.insert(0, new_head)
+    if new_head == food:
+        # Increase length and place new food
+        food = (random.randint(0, width-1), random.randint(0, height-1))
+    else:
+        snake.pop()
+    return True
+
+def update_direction(event):
+    global direction
+    if event.action == 'pressed':
+        if event.direction == 'up' and direction != 'down':
+            direction = 'up'
+        elif event.direction == 'down' and direction != 'up':
+            direction = 'down'
+        elif event.direction == 'left' and direction != 'right':
+            direction = 'left'
+        elif event.direction == 'right' and direction != 'left':
+            direction = 'right'
+
+def check_shake():
+    x, y, z = sense.get_accelerometer_raw().values()
+    if abs(x) > 1.5 or abs(y) > 1.5 or abs(z) > 1.5:
+        return True
+    return False
+
+def update_direction_with_accelerometer():
+    global direction
+    x, y, z = sense.get_accelerometer_raw().values()
+    if abs(x) > abs(y):
+        if x > 0.5 and direction != 'left':
+            direction = 'right'
+        elif x < -0.5 and direction != 'right':
+            direction = 'left'
+    else:
+        if y > 0.5 and direction != 'up':
+            direction = 'down'
+        elif y < -0.5 and direction != 'down':
+            direction = 'up'
+
+sense.stick.direction_up = update_direction
+sense.stick.direction_down = update_direction
+sense.stick.direction_left = update_direction
+sense.stick.direction_right = update_direction
+
+while True:
+    draw_snake()
+    update_direction_with_accelerometer()
+    if not move_snake():
+        sense.show_message("Game Over", text_colour=(255, 0, 0))
+        sleep(2)  # Pause before restarting
+        initialize_game()
+    elif check_shake():
+        initialize_game()
+    sleep(0.5)
+                        </code></pre>
+                    </li>
+                    <li><strong>Run the Script:</strong>
+                        <pre><code>python3 snake.py
+                        </code></pre>
+                    </li>
+                </ol>
+
+                <h2>Design Approach</h2>
+                <p>The Snake Game application is designed to provide an interactive gaming experience using the Sense HAT's joystick and accelerometer. The user interface on the Sense HAT is straightforward, and the script ensures smooth gameplay with real-time updates.</p>
+
+                <h2>Challenges Faced</h2>
+                <ul>
+                    <li>Ensuring smooth and responsive control using both the joystick and accelerometer.</li>
+                    <li>Handling collisions and game over scenarios effectively.</li>
+                    <li>Maintaining a fun and engaging gameplay experience.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
