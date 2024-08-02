@@ -8,6 +8,86 @@ body {
     line-height: 1.6;
 }
 
+/* Framework Card Styles for Flipping Effect */
+.framework-card {
+    color: #000;
+    position: relative;
+    width: 100%;
+    height: 300px; /* Adjust height as needed */
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card-inner .card-front,
+.card-inner .card-back {
+    color: #000;
+    font-size: 20px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-inner .card-front {
+    background: #fff;
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+.card-inner .card-back {
+    background: #f8f9fa;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #333; /* Darker text color for readability */
+    padding: 20px;
+    height: 260px;
+    border-radius: 20px;
+    border: 2px solid #cc5200; 
+    text-align: center; /* Center align text */
+}
+
+.card-title {
+    font-weight: 600; /* Slightly bolder font */
+    font-size: 24px; /* Smaller font size for better fit */
+    margin-bottom: 10px;
+}
+
+.card-inner .card-back .card-text {
+    height: 100%;
+    padding: 10px 20px; /* More padding for better spacing */
+    line-height: 1.4; /* Improved line-height for readability */
+    border-radius: 15px;
+    width: 180px;
+    color: #333; /* Darker text color for readability */
+    overflow: hidden;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 400; /* Normal font weight */
+    font-size: 16px; /* Slightly smaller font size for better fit */
+}
+
+.framework-card:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Responsive Adjustments for Flipping Effect */
+@media (max-width: 768px) {
+    .framework-card {
+        height: 300px; /* Adjust for smaller screens */
+    }
+}
+
+
 input:focus, textarea:focus {
     border-color: #ff6600;
     box-shadow: 0 0 0 0.2rem rgba(255, 102, 0, 0.25);
