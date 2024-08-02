@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Logger with Sense HAT</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="container">
+        <div class="content">
+            <div class="back-button">
+                <a href="../index.html" class="btn-back">← Back to Portfolio</a>
+            </div>
+            <h1>Temperature Logger with Sense HAT</h1>
+            <p>Welcome to the Temperature Logger application. Below, you'll find details about the application, its core functionalities, and the setup process.</p>
+
+            <!-- Embed an overview or demo (if applicable) -->
+            <iframe src="https://olubakinde.github.io/RBP-temp-press-Humi/" frameborder="0" class="game-embed"></iframe>
+            <h3>Video Demonstration</h3>
+            <video src="#9843jghjksb"></video>
+
+            <section class="details">
+                <h2>How It Was Built</h2>
+                <p>This Temperature Logger is a Python script designed to monitor temperature, humidity, and pressure using the Sense HAT attached to a Raspberry Pi. The script displays the data on the Sense HAT LED matrix and logs the information to a file (`weather.txt`) every 30 seconds. Built using Python and the Sense HAT library, it leverages the Sense HAT's sensors to provide real-time environmental data.</p>
+
+                <h2>Core Functionalities</h2>
+                <ul>
+                    <li><strong>Temperature, Humidity, and Pressure Monitoring:</strong> Reads and displays temperature, humidity, and pressure data using the Sense HAT.</li>
+                    <li><strong>Data Logging:</strong> Logs temperature, humidity, and pressure data to the 8X8 LED Display every 30 seconds.</li>
+                    <li><strong>Real-time Display:</strong> Shows the data on the Sense HAT LED matrix for immediate feedback.</li>
+                </ul>
+
+                <h2>Setup and Installation</h2>
+                <p>To use the Temperature Logger, follow these steps:</p>
+                <ol>
+                    <li><strong>Install the Sense HAT Library:</strong>
+                        <pre><code>sudo apt-get update
+sudo apt-get install sense-hat
+                        </code></pre>
+                    </li>
+                    <li><strong>Create the Python Script:</strong>
+                        <p>Save the following Python code as `temp.py`:</p>
+                        <pre><code>from sense_hat import SenseHat
+from time import sleep
+from time import asctime
+
+sense = SenseHat()
+
+temp = round(sense.get_temperature()*1.8 +32)
+humidity = round(sense.get_humidity())
+pressure = round(sense.get_pressure())
+message = 'Temperature is %d F Humidity is %d percent Pressure is %d mbars' % (temp, humidity, pressure)
+
+sense.show_message(message, scroll_speed=(0.08), text_colour=[200, 0, 200], back_colour=[0, 0, 200])
+sense.clear()
+
+while True:
+    log = open("weather.txt", "a")
+    now = str(asctime())
+    log.write(now + " " + message + "\\n")
+    print(message)
+    log.close()
+    sleep(30)
+                        </code></pre>
+                    </li>
+                    <li><strong>Run the Script:</strong>
+                        <pre><code>python3 temp.py
+                        </code></pre>
+                    </li>
+                </ol>
+
+                <h2>Design Approach</h2>
+                <p>The Temperature Logger application is designed to provide real-time environmental monitoring with data persistence. The user interface on the Sense HAT is straightforward, and the script ensures that data is logged and displayed effectively. LocalStorage is not used in this case; instead, file-based logging is employed for simplicity.</p>
+
+                <h2>Challenges Faced</h2>
+                <ul>
+                    <li>Ensuring accurate readings from the Sense HAT sensors and handling data properly.</li>
+                    <li>Maintaining continuous data logging and real-time display without interruptions.</li>
+                    <li>Managing file operations to ensure smooth data writing and retrieval.</li>
+                </ul>
+            </section>
+        </div>
+    </main>
+</body>
+</html>
