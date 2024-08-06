@@ -13,6 +13,7 @@ body {
     max-width: 900px;
     margin: 20px auto;
     padding: 20px;
+    overflow: hidden;
 }
 
 /* Back Button */
@@ -42,15 +43,16 @@ h1 {
     animation: fadeInUp 1s ease-out;
 }
 
-/* Game Embed */
 .game-embed {
     width: 100%;
-    height: 800px;
+    height: 500px;
     border: none;
     border-radius: 10px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
     margin-bottom: 30px;
+    overflow: hidden; /* Hide scrollbars */
 }
+
 
 /* Section Styling */
 .details {
