@@ -53,6 +53,11 @@ h1 {
     overflow: hidden; /* Hide scrollbars */
 }
 
+img {
+    width: 900px;
+    border-radius: 10px;
+}
+
 
 /* Section Styling */
 .details {
@@ -119,6 +124,9 @@ h1 {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    img {
+        width: 350px;
+    }
     .game-embed {
         height: 300px;
     }
