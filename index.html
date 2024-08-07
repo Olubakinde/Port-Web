@@ -188,8 +188,27 @@
             </div>
         </section>
 
+        <section>
+            <button id="modalBtn" data-aos="fade-up">Open Modal</button>
+            <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>My Reflection on Technology</h2>
+                <p>Technology has always fascinated me. From the earliest computers to the latest advancements in AI, the rapid pace of innovation has continually captured my interest. The ability of technology to transform lives and industries is unparalleled, and I am eager to contribute to this ongoing evolution.</p>
+                <p>Through my projects, I have explored various facets of technology, from creating interactive web applications to developing hardware-based solutions using Raspberry Pi. Each project has taught me something new and has reinforced my belief in the power of technology to solve real-world problems.</p>
+                <p>Looking ahead, I am excited about the potential of emerging technologies such as artificial intelligence, blockchain, and the Internet of Things. I believe these technologies will shape the future in profound ways, and I am committed to staying at the forefront of these developments.</p>
+                <p>Ultimately, my goal is to leverage technology to create innovative solutions that make a positive impact on society. I am passionate about continuous learning and am always looking for opportunities to expand my knowledge and skills in this ever-evolving field.</p>
+            </div>
+            </div>
+        </section><br>
+
         <section id="frameworks" class="section bg-light p-5 rounded shadow-sm">
             <h2>Frameworks I Use</h2>
+            <div class="icon-container">
+                <i class="fas fa-code animated-icon"></i>
+                <i class="fas fa-laptop animated-icon"></i>
+                <i class="fas fa-database animated-icon"></i>
+              </div>
             <div class="row">
                 <div class="col-md-3">
                     <div class="card framework-card" data-aos="flip-left">
@@ -307,7 +326,27 @@
                     </div>
                 </div>
             </div>
+        </section>     
+        
+        <section id="game" class="section bg-light p-5 rounded shadow-sm">
+            <h2>Interactive Game</h2>
+            <p>Engage with this interactive game where you can challenge yourself and have fun. Check back often for new games and updates!</p>
+            <div class="game-board" class="btn btn-main">
+                <!-- Cards will be injected here -->
+            </div>
+
+            <!-- Modal -->
+            <div class="modal" id="winModal">
+                <div class="modal-content">
+                    <span class="close-btn" id="closeModal">&times;</span>
+                    <h2>You won!</h2>
+                    <p>Congratulations, you've matched all the pairs!</p>
+                </div>
+            </div>
         </section>
+
+
+        
 
         <section id="contact" class="section bg-white p-5 rounded shadow-sm">
             <h2>Contact Me</h2>
@@ -352,5 +391,8 @@
     </script>
     <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@3.0.0"></script>
+
 </body>
 </html>
